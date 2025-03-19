@@ -1,50 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
+    <title>Lesson Reminder</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: black;
-            color: white;
-            font-size: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            background-color: #00467f;
+            padding: 20px;
         }
-        #countdown {
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #d9534f;
+        }
+        .countdown {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5bc0de;
+        }
+        .alert {
+            color: #d9534f;
             font-weight: bold;
         }
     </style>
     <script>
         function updateCountdown() {
-            let targetDate = new Date("2025-03-27T04:59:59Z"); // March 26, 2025, 21:59:59 PST converted to UTC
-            let now = new Date();
-            let diff = targetDate - now;
+            const deadline = new Date('March 26, 2025 21:59:59 PST').getTime();
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
 
-            let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = 
-                `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-            setTimeout(updateCountdown, 1000);
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown').innerHTML = `Time Remaining: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                document.getElementById('countdown').innerHTML = "Time's up!";
+            }
         }
+
+        setInterval(updateCountdown, 1000);
     </script>
 </head>
-<body onload="updateCountdown()">
-<h1 style="text-align: center;"><span style="color: #333399;">Lesson Countdown</span></h1>
-<h4 style="text-align: center;"><span style="color: #000080;">Lessons Due: <span style="color: #ff0000;">March 26th, 2025</span></span></h4>
-<div id="countdown"></div><br>
-<p style="text-align: center;"><span style="color: #ff0000;">AVOID CLOCK-IN RESTRICTIONS! </span></p>
-<p style="text-align: center;"><span style="color: #000080;">Complete all regulatory lessons by 9:59 PM PST on March 26th, 2025 to avoid clock-in restrictions!</span></p>
-</body>
-</html>
+<body>
+    <div class="container">
+        <h1>Reminder: Complete Your Lessons by March 26!</h1>
+        <p><strong>Regulatory Lessons Deadline: March 26, 2025</strong></p>
+        <p id="countdown" class="countdown">Time Remaining: 7d 13h 33m 3s</p>
+        <p class="alert">🚨 Avoid Clock-In Restrictions! 🚨</p>
+        <p>Ensure all required regulatory lessons are completed by <strong>9:59 PM PST on March 26, 2025</strong> to maintain your clock-in access.</p>
+        <p>Don't wait—finish your lessons today!</p>
+    </div>
+
+
+</body></html>
