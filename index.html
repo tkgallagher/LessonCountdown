@@ -1,64 +1,63 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson Reminder</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #00467f;
-            padding: 20px;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-        h1 {
-            color: #d9534f;
-        }
-        .countdown {
-            font-size: 32px;
-            font-weight: bold;
-            color: #5bc0de;
-        }
-        .alert {
-            color: #d9534f;
-            font-weight: bold;
-        }
-    </style>
-    <script>
-        function updateCountdown() {
-            const deadline = new Date('May 07, 2025 21:59:59 PST').getTime();
-            const now = new Date().getTime();
-            const timeLeft = deadline - now;
-
-            if (timeLeft > 0) {
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                document.getElementById('countdown').innerHTML = `Time Remaining: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-            } else {
-                document.getElementById('countdown').innerHTML = "Time's up!";
-            }
-        }
-
-        setInterval(updateCountdown, 1000);
-    </script>
-</head>
-<body>
-    <div class="container">
-        <h1>Reminder: Complete Your Lessons by May 7th!</h1>
-        <p><strong>Regulatory Lessons Deadline: May 7th, 2025</strong></p>
-        <p id="countdown" class="countdown">Time Remaining: 7d 13h 33m 3s</p>
-        <p class="alert">🚨 Avoid Clock-In Restrictions! 🚨</p>
-        <p>Ensure all required regulatory lessons are completed by <strong>9:59 PM PST on March 26, 2025</strong> to maintain your clock-in access.</p>
-        <p>Don't wait—finish your lessons today!</p>
-    </div>
-
-
-</body></html>
+<html lang="en">
+<head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <title>Lesson Reminder</title>     
+    <style>         
+        body {             
+            font-family: Arial, sans-serif;             
+            text-align: center;             
+            background-color: #00467f;             
+            padding: 20px;         
+        }         
+        .container {             
+            background: white;             
+            padding: 20px;             
+            border-radius: 10px;             
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);             
+            display: inline-block;         
+        }         
+        h1 {             
+            color: #d9534f;         
+        }         
+        .countdown {             
+            font-size: 32px;             
+            font-weight: bold;             
+            color: #5bc0de;         
+        }         
+        .alert {             
+            color: #d9534f;             
+            font-weight: bold;         
+        }     
+    </style>     
+    <script>         
+        function updateCountdown() {             
+            const deadline = new Date('March 07, 2025 21:59:59 PST').getTime();             
+            const now = new Date().getTime();             
+            const timeLeft = deadline - now;              
+             
+            if (timeLeft > 0) {                 
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));                 
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));                 
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));                 
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);                                  
+                document.getElementById('countdown').innerHTML = `Time Remaining: ${days}d ${hours}h ${minutes}m ${seconds}s`;             
+            } else {                 
+                document.getElementById('countdown').innerHTML = "Time's up!";             
+            }         
+         
+        }          
+        setInterval(updateCountdown, 1000);     
+    </script> 
+</head> 
+<body>     
+    <div class="container">         
+        <h1>Reminder: Complete Your Lessons by March 7th!</h1>         
+        <p><strong>Regulatory Lessons Deadline: March 7th, 2025</strong></p>         
+        <p id="countdown" class="countdown">Time Remaining: 7d 13h 33m 3s</p>         
+        <p class="alert">🚨 Avoid Clock-In Restrictions! 🚨</p>         
+        <p>Ensure all required regulatory lessons are completed by <strong>9:59 PM PST on March 7, 2025</strong> to maintain your clock-in access.</p>         
+        <p>Don't wait—finish your lessons today!</p>     
+    </div>   
+</body>
+</html>
