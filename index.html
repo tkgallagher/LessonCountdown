@@ -7,8 +7,13 @@
         body {             
             font-family: Arial, sans-serif;             
             text-align: center;             
-            background-color: #00467f;             
-            padding: 20px;         
+            background-color: #00467f;  
+      		color: #3A4D66;  
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }         
         .container {             
             background: white;             
@@ -21,7 +26,7 @@
             color: #d9534f;         
         }         
         .countdown {             
-            font-size: 24px;             
+            font-size: 28px;             
             font-weight: bold;             
             color: #5bc0de;         
         }         
@@ -35,7 +40,7 @@
             const deadline = new Date('November 12, 2025 21:59:59 PST').getTime();             
             const now = new Date().getTime();             
             const timeLeft = deadline - now;              
-             
+            
             if (timeLeft > 0) {                 
                 const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));                 
                 const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));                 
@@ -45,7 +50,6 @@
             } else {                 
                 document.getElementById('countdown').innerHTML = "Time's up!";             
             }         
-         
         }          
         setInterval(updateCountdown, 1000);     
     </script> 
@@ -61,4 +65,3 @@
     </div>   
 </body>
 </html>
-
