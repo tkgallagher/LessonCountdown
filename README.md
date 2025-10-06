@@ -1,2 +1,2 @@
 # LessonCountdown
-P2 Lesson Countdown
+P3 Lesson Countdown
